@@ -8,6 +8,7 @@ public class LinkListDemo {
         l.addFirst(3);
         l.addFirst(2);
         l.display();
+        System.out.println(l.getIndex(1));
         l.removeAt(3);
         l.display();
     }

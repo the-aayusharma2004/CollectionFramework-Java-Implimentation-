@@ -119,6 +119,24 @@ public class LinkList
         curr.next = curr.next.next;
         size--;
     }
+    public int getIndex(int num) throws Exception {
+        if(size==0)
+        {
+            throw new Exception("Empty list!");
+        }
+        Node curr =head;
+        int index =0 ;
+        while(head.next!=null)
+        {
+            if(curr.data==num)
+            {
+                return index;
+            }
+            curr=curr.next;
+            index++;
+        }
+        return -1;
+    }
     public void display()
     {
         Node temp =head;
