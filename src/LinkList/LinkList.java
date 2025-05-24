@@ -79,6 +79,46 @@ public class LinkList
         }
         return curr.data;
     }
+    public void removeFirst() //throws Exception
+    {
+        if(size==0)
+        {
+            //throw new Exception("Link list is empty ");
+            System.out.println("link list is empty ");
+        }
+        else
+            head =head.next;
+
+    }
+    public void removeAt(int index) {
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("Index cannot be negative");
+        }
+
+        if (head == null) {
+            throw new IndexOutOfBoundsException("List is empty");
+        }
+
+        if (index == 0) {
+            head = head.next;
+            return;
+        }
+        Node curr = head;
+        int i = 0;
+
+        // Traverse to the node before the one to delete
+        while (curr != null && i < index - 1) {
+            curr = curr.next;
+            i++;
+        }
+
+        if (curr == null || curr.next == null) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+
+        curr.next = curr.next.next;
+        size--;
+    }
     public void display()
     {
         Node temp =head;
