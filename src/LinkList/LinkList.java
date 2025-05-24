@@ -57,6 +57,28 @@ public class LinkList
         }
         size++;
     }
+    public int getSize()
+    {
+        return size ;
+    }
+    public int getFirst() throws Exception
+    {
+        if(size==0)
+        {
+            throw new Exception("Linked list is empty");
+        }
+        return head.data;
+    }
+    public int getAt(int index)
+    {
+        Node curr ;
+        curr =head;
+        for (int i=0;i<=index;i++)
+        {
+            curr=curr.next;
+        }
+        return curr.data;
+    }
     public void display()
     {
         Node temp =head;
@@ -67,7 +89,7 @@ public class LinkList
             temp=temp.next;
             if(temp==null)
             {
-                System.out.print((Object) null);
+                System.out.print((Object) null+"\n");
             }
         }
     }

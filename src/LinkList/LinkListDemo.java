@@ -13,5 +13,7 @@ public class LinkListDemo {
         System.out.println("after insertion in between ");
         l.add(5,0);
         l.display();
+        l.getSize();
+        System.out.println(l.getAt(3));
     }
 }
